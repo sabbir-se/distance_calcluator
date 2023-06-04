@@ -14,6 +14,11 @@ public class DistanceController {
     @Autowired
     private DistanceService distanceService;
 
+    @PostMapping("/calculate")
+    public ResponseEntity<?> distanceCalculate(@RequestBody UserRequestModel userRequestModel) {
+        return new ResponseEntity<>(distanceService.distanceCalculate(userRequestModel), HttpStatus.OK);
+    }
+
     @GetMapping("/units")
     public ResponseEntity<?> getAllUnits() {
         return new ResponseEntity<>(distanceService.getAllUnits(), HttpStatus.OK);
