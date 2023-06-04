@@ -1,5 +1,6 @@
 package com.woodwing.assignment.controller;
 
+import com.woodwing.assignment.exception.CustomException;
 import com.woodwing.assignment.model.UserRequestModel;
 import com.woodwing.assignment.service.DistanceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class DistanceController {
     private DistanceService distanceService;
 
     @PostMapping("/calculate")
-    public ResponseEntity<?> distanceCalculate(@RequestBody UserRequestModel userRequestModel) {
+    public ResponseEntity<?> distanceCalculate(@RequestBody UserRequestModel userRequestModel) throws CustomException {
         return new ResponseEntity<>(distanceService.distanceCalculate(userRequestModel), HttpStatus.OK);
     }
 

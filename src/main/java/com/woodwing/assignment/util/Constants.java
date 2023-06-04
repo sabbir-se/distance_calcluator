@@ -6,6 +6,13 @@ import java.util.Map;
 
 public class Constants {
 
+    public static final String FIRST_DISTANCE_NOT_FOUND = "First distance not found!";
+    public static final String SECOND_DISTANCE_NOT_FOUND = "Second distance not found!";
+    public static final String EXPECTED_UNIT_NOT_FOUND = "Expected unit not found!";
+    public static final String WRONG_EXPECTED_UNIT = "Wrong expected unit!";
+    public static final String WRONG_FIRST_DISTANCE_UNIT = "Wrong first distance unit!";
+    public static final String WRONG_SECOND_DISTANCE_UNIT = "Wrong second distance unit!";
+
     public static Boolean isEmptyOrNull(String str) {
         if (str == null)
             return true;
