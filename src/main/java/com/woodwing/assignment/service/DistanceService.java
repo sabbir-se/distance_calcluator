@@ -59,14 +59,15 @@ public class DistanceService {
             throw new CustomException(HttpStatus.NOT_FOUND.value(), Constants.EXPECTED_UNIT_NOT_FOUND);
         }
 
+        String UNIT_SHOULD_BE_EITHER = "Unit should be either: " + String.join("/", Constants.unitList);
         if (!Constants.unitList.contains(userRequestModel.getExpectedResultUnit())) {
-            throw new CustomException(HttpStatus.FORBIDDEN.value(), Constants.WRONG_EXPECTED_UNIT);
+            throw new CustomException(HttpStatus.FORBIDDEN.value(), Constants.WRONG_EXPECTED_UNIT + UNIT_SHOULD_BE_EITHER);
         }
         if (!Constants.unitList.contains(userRequestModel.getFirstDistance().getUnit())) {
-            throw new CustomException(HttpStatus.FORBIDDEN.value(), Constants.WRONG_FIRST_DISTANCE_UNIT);
+            throw new CustomException(HttpStatus.FORBIDDEN.value(), Constants.WRONG_FIRST_DISTANCE_UNIT + UNIT_SHOULD_BE_EITHER);
         }
         if (!Constants.unitList.contains(userRequestModel.getSecondDistance().getUnit())) {
-            throw new CustomException(HttpStatus.FORBIDDEN.value(), Constants.WRONG_SECOND_DISTANCE_UNIT);
+            throw new CustomException(HttpStatus.FORBIDDEN.value(), Constants.WRONG_SECOND_DISTANCE_UNIT + UNIT_SHOULD_BE_EITHER);
         }
     }
 
